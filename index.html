@@ -73,16 +73,10 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    max-width: 1100px;
+    gap: 40px; /* espace entre photo et texte */
+    max-width: 1100px; /* largeur max pour centrer */
     margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.demarche-photo img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
+    padding: 60px 20px; /* marge globale à gauche/droite de la section */
 }
 
 .demarche-text {
@@ -90,9 +84,10 @@ nav a:hover {
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
+    padding: 0 20px; /* <-- paraphe intérieur gauche/droite */
 }
 
-/* Responsive : mobile / tablette */
+/* Responsive : sur mobile, texte centré et empilé */
 @media (max-width: 768px) {
     .demarche-container {
         flex-direction: column;
@@ -101,7 +96,9 @@ nav a:hover {
 
     .demarche-text {
         text-align: center;
+        padding: 0 10px; /* un peu moins sur mobile */
     }
+}
 
     .demarche-photo img {
         max-width: 100%;
