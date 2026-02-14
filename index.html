@@ -231,9 +231,7 @@ footer {
 
 </style>
 </head>
-document.querySelector('.hero').addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+    
 <body>
 
 <header>
@@ -379,5 +377,17 @@ window.addEventListener('scroll', reveal);
 reveal();
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // bloque le clic droit sur la hero
+            // alert("Clic droit désactivé"); // optionnel pour tester
+        });
+    }
+});
+</script>
+    
 </body>
 </html>
