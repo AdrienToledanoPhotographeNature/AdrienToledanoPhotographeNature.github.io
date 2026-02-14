@@ -68,7 +68,7 @@ nav a:hover {
 }
 
 
-
+    
 .hero {
     height: 100vh;
     background: url('images/AK_11.jpeg') center/cover no-repeat;
@@ -87,8 +87,13 @@ nav a:hover {
 }
 
 
+
 @media (max-width: 768px) {
     .hero {
+        background-image: url('images/AK_hero_mobile.jpeg'); /* si tu veux une image différente */
+        background-position: top left; /* focus sur le coin haut-gauche */
+        background-size: cover;
+        background-repeat: no-repeat;
         position: relative; /* nécessaire pour positionner le texte */
         display: block;     /* on ne change pas l'affichage desktop */
         background-position: top left;
@@ -107,7 +112,6 @@ nav a:hover {
         margin: 0;
     }
 }
-
     
 .demarche-container {
     display: flex;
