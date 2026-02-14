@@ -6,6 +6,7 @@
 <title>Adrien Toledano - Photographie Nature</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -17,7 +18,7 @@
 body {
     background: #0a0a0a;
     color: #e8e8e8;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', serif;
     overflow-x: hidden;
 }
 
@@ -66,6 +67,45 @@ nav a:hover {
     letter-spacing: 6px;
     background: rgba(0,0,0,0.5);
     padding: 20px 40px;
+}
+
+.demarche-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.demarche-photo img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.demarche-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Responsive : mobile / tablette */
+@media (max-width: 768px) {
+    .demarche-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .demarche-text {
+        text-align: center;
+    }
+
+    .demarche-photo img {
+        max-width: 100%;
+    }
 }
 
 .section {
@@ -119,10 +159,18 @@ footer {
 </section>
     
 <section id="demarche" class="section">
-    <h2>Ma démarche</h2>
-    <p>
-    Pendant près de 10 ans, j’ai appris à arpenter les massifs montagneux français pour photographier des paysages de montagne et les animaux qui y-vivent. Le noir et blanc est devenu pour moi un moyen de me concentrer sur l’essentiel, de rechercher des textures et de mettre en avant les contrastes. Et puis, j’ai eu envie d’utiliser toutes ces connaissances pour découvrir la montagne sous une autre dimension. L’Alaska était un de mes rêves de nature intacte, un monde sauvage où l'eau est une constante réelle et puissante que j’ai du ré-appréhender. Sous forme de glace, de brume, de pluie ou de mer, elle façonne les vastes espaces autant qu'elle rythme la vie des grands mammifères. Avec l'altitude et la latitude, les forêts de sapins et les milliers de lacs laissent place à la toundra, aux vallées creusées par les rivières et aux glaciers interminables couronnés de sommets enneigés. Je n'ai d'ailleurs pas hésité à mettre les deux pieds dans l'eau jusqu'à la taille et à parcourir des centaines de kilomètres à pied, à vélo et en kayak pour m'aventurer dans ces territoires reculés. Ici, chaque rencontre avec un ours, un élan ou un lion de mer est une récompense silencieuse souvent habitée d'une certaine crainte. Je présente cette série photographique sur la manière dont l'eau sculpte sans cesse les géants de ces montagnes sauvages d'Alaska. Elle suit les langues de glace effilées du Kenai qui s'élancent vers la mer, traverse les forêts et les lacs peuplés d'ours du Katmai, et s'aventure jusqu'aux toundras sauvages qui entourent le sommet mythique du Denali.
-    </p>
+    <div class="demarche-container">
+        <div class="demarche-photo">
+            <img src="images/dem.jpeg" alt="Ma démarche photographique">
+        </div>
+        <div class="demarche-text">
+            <h2>MA DÉMARCHE</h2>
+            <p>
+            Pendant près de 10 ans, j’ai appris à arpenter les massifs montagneux français pour photographier des paysages de montagne et les animaux qui y-vivent. Le noir et blanc est devenu pour moi un moyen de me concentrer sur l’essentiel, de rechercher des textures et de mettre en avant les contrastes. Et puis, j’ai eu envie d’utiliser toutes ces connaissances pour découvrir la montagne sous une autre dimension. L’Alaska était un de mes rêves de nature intacte, un monde sauvage où l'eau est une constante réelle et puissante que j’ai du ré-appréhender. Sous forme de glace, de brume, de pluie ou de mer, elle façonne les vastes espaces autant qu'elle rythme la vie des grands mammifères. Avec l'altitude et la latitude, les forêts de sapins et les milliers de lacs laissent place à la toundra, aux vallées creusées par les rivières et aux glaciers interminables couronnés de sommets enneigés. Je n'ai d'ailleurs pas hésité à mettre les deux pieds dans l'eau jusqu'à la taille et à parcourir des centaines de kilomètres à pied, à vélo et en kayak pour m'aventurer dans ces territoires reculés. Ici, chaque rencontre avec un ours, un élan ou un lion de mer est une récompense silencieuse souvent habitée d'une certaine crainte.
+Je présente cette série photographique sur la manière dont l'eau sculpte sans cesse les géants de ces montagnes sauvages d'Alaska. Elle suit les langues de glace effilées du Kenai qui s'élancent vers la mer, traverse les forêts et les lacs peuplés d'ours du Katmai, et s'aventure jusqu'aux toundras sauvages qui entourent le sommet mythique du Denali.
+            </p>
+        </div>
+    </div>
 </section>
     
 <section id="portfolio" class="section">
