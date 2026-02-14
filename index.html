@@ -71,34 +71,49 @@ nav a:hover {
 
 .demarche-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 40px; /* espace entre photo et texte */
-    max-width: 1100px; /* largeur max pour centrer */
+    gap: 40px;             /* espace entre la photo et le texte */
+    max-width: 1100px;     /* largeur max de la section */
     margin: 0 auto;
-    padding: 60px 20px; /* marge globale à gauche/droite de la section */
+    padding: 60px 20px;    /* marges latérales */
+    flex-wrap: wrap;        /* permet à l'élément de se réarranger sur mobile */
+}
+
+.demarche-photo {
+    flex: 1 1 400px;       /* prend de la place mais minimum 400px sur PC */
+    max-width: 500px;      /* limite la largeur max de la photo */
+}
+
+.demarche-photo img {
+    width: 100%;           /* s’adapte au conteneur */
+    height: auto;
+    border-radius: 8px;
 }
 
 .demarche-text {
-    flex: 1;
+    flex: 2 1 300px;       /* texte plus large que la photo */
+    padding: 0 20px;       /* paraphe à gauche/droite */
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
-    padding: 0 20px; /* <-- paraphe intérieur gauche/droite */
 }
 
-/* Responsive : sur mobile, texte centré et empilé */
+/* Mobile : empile la photo et le texte */
 @media (max-width: 768px) {
     .demarche-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
     .demarche-text {
-        text-align: center;
-        padding: 0 10px; /* un peu moins sur mobile */
+        padding: 10px 0;
     }
 
+    .demarche-photo {
+        max-width: 90%;      /* photo plus petite sur mobile */
+    }
 }
 
 .section {
