@@ -52,24 +52,21 @@ nav a:hover {
     opacity: 0.6;
 }
 
-/* Desktop inchangé */
-header nav {
-    display: flex;
-    gap: 30px;
-}
-
-/* Mobile : aligner à droite */
 @media (max-width: 768px) {
     header nav {
-        justify-content: flex-end; /* pousse les liens à droite */
-        padding-right: 20px;       /* petit espace avec le bord */
+        display: flex;
+        flex-direction: column;   /* liens les uns sous les autres */
+        align-items: flex-end;    /* alignement à droite */
+        gap: 15px;                /* espace entre les liens */
+        padding-right: 20px;      /* espace avec le bord droit */
     }
 
     header nav a {
-        margin-left: 15px;          /* espace entre les liens */
-        font-size: 14px;            /* ajuste si nécessaire */
+        margin-left: 0;           /* plus besoin de margin-left horizontal */
+        font-size: 16px;          /* taille adaptée au mobile */
     }
 }
+
 
     
 .hero {
