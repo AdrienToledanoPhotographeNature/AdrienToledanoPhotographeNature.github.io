@@ -72,15 +72,19 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        background: url('images/AK_10.jpeg') center/cover no-repeat;
+        background-image: url('images/hero_mobile.jpeg'); /* nouvelle image si besoin */
+        background-position: top left;  /* <-- met l’accent sur le coin haut-gauche */
+        background-size: cover;         /* pour que ça remplisse la section */
+        background-repeat: no-repeat;
     }
 
     .hero h2 {
-        font-size: 28px;
+        font-size: 28px;      /* titre plus petit sur mobile */
         letter-spacing: 3px;
         padding: 15px 20px;
     }
 }
+
     
 .demarche-container {
     display: flex;
