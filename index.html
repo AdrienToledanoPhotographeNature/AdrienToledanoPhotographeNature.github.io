@@ -68,7 +68,7 @@ nav a:hover {
 }
 
 
-    
+
 .hero {
     height: 100vh;
     background: url('images/AK_11.jpeg') center/cover no-repeat;
@@ -89,39 +89,22 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        background-image: url('images/AK_hero_mobile.jpeg'); /* si tu veux une image différente */
-        background-position: top left; /* focus sur le coin haut-gauche */
+        position: relative; /* nécessaire pour positionner le texte */
+        display: block;     /* on ne change pas l'affichage desktop */
+        background-position: top left;
         background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-    }
-
-    /* overlay léger mais restreint à la taille du texte */
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 70%; /* décale l’overlay vers le bas */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        height: auto;
-        max-height: 50%; /* pas de cadre géant */
-        background: rgba(0,0,0,0.4); /* gris transparent */
-        border-radius: 8px;
-        z-index: 1;
     }
 
     .hero h2 {
-        position: relative; /* au-dessus de l’overlay */
-        z-index: 2;
-        font-size: 28px;
-        letter-spacing: 3px;
+        position: absolute;
+        bottom: 10%;        /* descend le texte vers le bas de l'image */
+        left: 50%;           /* centré horizontalement */
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 28px;     /* taille adaptée au mobile */
+        padding: 0 15px;     /* pour ne pas toucher les bords */
+        z-index: 2;          /* au-dessus de l'image */
         margin: 0;
-        padding: 15px 20px;
-        max-width: 90%;
     }
 }
 
