@@ -53,23 +53,27 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+
     header {
-        align-items: flex-start;
+        align-items: flex-start;  /* aligne en haut au lieu du centre */
         padding-top: 15px;
     }
+    
     header nav {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 15px;
-        padding-right: 20px;
+        flex-direction: column;   /* liens les uns sous les autres */
+        align-items: flex-end;    /* alignement à droite */
+        gap: 15px;                /* espace entre les liens */
+        padding-right: 20px;      /* espace avec le bord droit */
     }
+
     header nav a {
-        margin-left: 0;
-        font-size: 16px;
+        margin-left: 0;           /* plus besoin de margin-left horizontal */
+        font-size: 16px;          /* taille adaptée au mobile */
     }
 }
 
+    
 .hero {
     height: 100vh;
     background: url('images/AK_11.jpeg') center/cover no-repeat;
@@ -87,70 +91,77 @@ nav a:hover {
     padding: 20px 40px;
 }
 
+
+
 @media (max-width: 768px) {
     .hero {
-        background-image: url('images/AK_hero_mobile.jpeg');
-        background-position: top left;
+        background-image: url('images/AK_hero_mobile.jpeg'); /* si tu veux une image différente */
+        background-position: top left; /* focus sur le coin haut-gauche */
         background-size: cover;
         background-repeat: no-repeat;
-        position: relative;
-        display: block;
+        position: relative; /* nécessaire pour positionner le texte */
+        display: block;     /* on ne change pas l'affichage desktop */
+        background-position: top left;
+        background-size: cover;
     }
+
     .hero h2 {
         position: absolute;
-        bottom: 17%;
-        left: 50%;
+        bottom: 17%;        /* descend le texte vers le bas de l'image */
+        left: 50%;           /* centré horizontalement */
         transform: translateX(-50%);
         text-align: center;
-        font-size: 28px;
-        padding: 0 15px;
-        z-index: 2;
+        font-size: 28px;     /* taille adaptée au mobile */
+        padding: 0 15px;     /* pour ne pas toucher les bords */
+        z-index: 2;          /* au-dessus de l'image */
         margin: 0;
     }
 }
-
+    
 .demarche-container {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 40px;
-    max-width: 1100px;
+    gap: 40px;             /* espace entre la photo et le texte */
+    max-width: 1100px;     /* largeur max de la section */
     margin: 0 auto;
-    padding: 60px 20px;
-    flex-wrap: wrap;
+    padding: 60px 20px;    /* marges latérales */
+    flex-wrap: wrap;        /* permet à l'élément de se réarranger sur mobile */
 }
 
 .demarche-photo {
-    flex: 1 1 400px;
-    max-width: 500px;
+    flex: 1 1 400px;       /* prend de la place mais minimum 400px sur PC */
+    max-width: 500px;      /* limite la largeur max de la photo */
 }
 
 .demarche-photo img {
-    width: 100%;
+    width: 100%;           /* s’adapte au conteneur */
     height: auto;
     border-radius: 8px;
-    cursor: pointer;
 }
 
 .demarche-text {
-    flex: 2 1 300px;
-    padding: 0 20px;
+    flex: 2 1 300px;       /* texte plus large que la photo */
+    padding: 0 20px;       /* paraphe à gauche/droite */
     font-size: 16px;
     line-height: 1.6;
-    text-align: justify;
+    text-align: justify
 }
 
+/* Mobile : empile la photo et le texte */
 @media (max-width: 768px) {
     .demarche-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+
     .demarche-text {
         padding: 10px 0;
     }
+
     .demarche-photo {
-        max-width: 90%;
+        max-width: 90%;      /* photo plus petite sur mobile */
     }
 }
 
@@ -163,28 +174,29 @@ nav a:hover {
 
 .contact-text {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* espace entre le texte et l'image */
 }
 
 .contact-text p {
-    margin: 5px 0;
+    margin: 5px 0;      /* petit espace entre les lignes */
     font-size: 18px;
-    color: #fff;
+    color: #fff;         /* ou une couleur qui ressort sur ton fond */
 }
 
 .contact-image img {
-    width: 100%;
-    height: auto;
+    width: 100%;         /* s’adapte à la largeur de l’écran */
+    height: auto;        /* garde les proportions */
     display: block;
-    object-fit: cover;
-    cursor: pointer;
+    object-fit: cover;   /* garantit que l'image reste remplie si nécessaire */
 }
 
+/* Responsive mobile */
 @media (max-width: 768px) {
     .contact-text p {
         font-size: 16px;
     }
 }
+
 
 .section {
     padding: 120px 20px;
@@ -202,7 +214,6 @@ nav a:hover {
 .photo img {
     width: 100%;
     display: block;
-    cursor: pointer;
 }
 
 .photo.visible {
@@ -218,34 +229,9 @@ footer {
     opacity: 0.6;
 }
 
-/* ===== Lightbox CSS ===== */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.5);
-    cursor: zoom-out;
-    transition: transform 0.3s ease;
-}
-
-.lightbox img:hover {
-    transform: scale(1.02);
-}
 </style>
 </head>
+    
 <body>
 
 <header>
@@ -259,8 +245,10 @@ footer {
 
 <section class="hero">
     <h2>ALASKA, OÙ L'EAU SCULTE LES GÉANTS</h2>
-</section>
 
+
+</section>
+    
 <section id="demarche" class="section">
     <div class="demarche-container">
         <div class="demarche-photo">
@@ -269,96 +257,137 @@ footer {
         <div class="demarche-text">
             <h2>DÉMARCHE</h2>
             <p>
-            Sous forme de glace, de brume, de pluie ou de mer, l'eau façonne avec puissance les vastes espaces de l'Alaska autant qu'elle rythme la vie des grands mammifères. Avec l'altitude et la latitude, les forêts de sapins et les milliers de lacs laissent place à la toundra, aux vallées creusées par les rivières et aux glaciers interminables couronnés de sommets enneigés.
+            <p>
+            <p>
+            Sous forme de glace, de brume, de pluie ou de mer, l'eau façonne avec puissance les vastes espaces de l'Alaska autant qu'elle rythme la vie des grands mammifères. Avec l'altitude et la latitude, les forêts de sapins et les milliers de lacs laissent place à la toundra, aux vallées creusées par les rivières et aux glaciers interminables couronnés de sommets enneigés. 
             <br>Cette série photographique suit les langues de glace effilées du Kenai qui s'élancent vers la mer, traverse les forêts et les lacs peuplés d'ours du Katmai, et s'aventure jusqu'aux toundras sauvages qui entourent le sommet mythique du Denali.
             Je n'ai pas hésité à mettre les deux pieds dans l'eau jusqu'à la taille et à parcourir des centaines de kilomètres à pied, à vélo et en kayak pour m'aventurer dans ces territoires reculés où chaque rencontre avec un ours, un élan ou un lion de mer est une récompense silencieuse souvent habitée d'une certaine crainte.
             </p>
         </div>
     </div>
 </section>
-
+    
 <section id="portfolio" class="section">
-    <div class="photo"><img src="images/AK_2.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_1.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_3.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_4.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_5.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_6.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_7.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_8.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_9.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_10.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_11.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_12.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_13.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_14.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_15.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_16.jpeg" alt=""></div>
-    <div class="photo"><img src="images/AK_17.jpeg" alt=""></div>
+
+    <div class="photo">
+        <img src="images/AK_2.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_1.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_3.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_4.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_5.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_6.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_7.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_8.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_9.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_10.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_11.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_12.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_13.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_14.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_16.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_15.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+    <div class="photo">
+        <img src="images/AK_17.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+    </div>
+
+
 </section>
 
 <section id="contact" class="contact-section">
-    <div class="contact-text">
-        <p>MERCI DE VOTRE VISITE</p>
-        <p>VOUS ÊTES INTÉRESSÉ.E PAR UN TIRAGE ? CONTACTEZ-MOI</p>
-        <p>adrien.toledano@protonmail.com</p>
-    </div>
-    <div class="contact-image">
-        <img src="images/AK_contact.jpeg" alt="">
-    </div>
+  <div class="contact-text">
+    <p>MERCI DE VOTRE VISITE </p>
+    <p>VOUS ÊTES INTÉRESSÉ.E PAR UN TIRAGE ? CONTACTEZ-MOI </p>
+    <p>adrien.toledano@protonmail.com</p>
+  </div>
+
+  <div class="contact-image">
+    <img src="images/AK_contact.jpeg" oncontextmenu="return false;" draggable="false" alt="">
+  </div>
 </section>
+
+
 
 <footer>
     © 2026 Adrien Toledano — Photographie Nature Noir & Blanc — Tous droits réservés
 </footer>
 
-<!-- ===== Lightbox HTML ===== -->
-<div class="lightbox" id="lightbox">
-    <img src="" alt="Zoom image">
-</div>
-
 <script>
-// Animation scroll pour les photos
 const photos = document.querySelectorAll('.photo');
+
 const reveal = () => {
     photos.forEach(photo => {
         const windowHeight = window.innerHeight;
         const elementTop = photo.getBoundingClientRect().top;
         const visiblePoint = 150;
+
         if (elementTop < windowHeight - visiblePoint) {
             photo.classList.add('visible');
         }
     });
 };
+
 window.addEventListener('scroll', reveal);
 reveal();
+</script>
 
-// Désactive clic droit sur la hero
+<script>
 document.addEventListener("DOMContentLoaded", function() {
     const hero = document.querySelector('.hero');
     if (hero) {
         hero.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // bloque le clic droit sur la hero
+            // alert("Clic droit désactivé"); // optionnel pour tester
         });
     }
 });
-
-// Lightbox pour zoom des images
-const portfolioImages = document.querySelectorAll('.photo img, .demarche-photo img, .contact-image img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-
-portfolioImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-    });
-});
-
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
 </script>
-
+    
 </body>
 </html>
