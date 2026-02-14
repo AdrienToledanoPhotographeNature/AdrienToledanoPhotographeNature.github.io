@@ -52,6 +52,26 @@ nav a:hover {
     opacity: 0.6;
 }
 
+/* Desktop inchangé */
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+/* Mobile : aligner à droite */
+@media (max-width: 768px) {
+    header nav {
+        justify-content: flex-end; /* pousse les liens à droite */
+        padding-right: 20px;       /* petit espace avec le bord */
+    }
+
+    header nav a {
+        margin-left: 15px;          /* espace entre les liens */
+        font-size: 14px;            /* ajuste si nécessaire */
+    }
+}
+
+    
 .hero {
     height: 100vh;
     background: url('images/AK_11.jpeg') center/cover no-repeat;
