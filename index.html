@@ -72,16 +72,25 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        background-image: url('images/AK_10.jpeg'); /* nouvelle image si besoin */
-        background-position: top left;  /* <-- met l’accent sur le coin haut-gauche */
-        background-size: cover;         /* pour que ça remplisse la section */
+        background-image: url('images/AK_hero_mobile.jpeg'); /* si tu veux une image différente */
+        background-position: top left; /* focus sur le coin haut-gauche */
+        background-size: cover;
         background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-start; /* commence en haut pour pouvoir pousser avec padding */
+        justify-content: center;
+        text-align: center;
+        position: relative;
     }
 
     .hero h2 {
-        font-size: 28px;      /* titre plus petit sur mobile */
+        font-size: 28px;
         letter-spacing: 3px;
-        padding: 15px 20px;
+        padding-top: 66%; /* <-- descendre le texte à 2/3 de la hauteur */
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 90%; /* pour éviter que le texte soit trop large */
+        margin: 0 auto;
     }
 }
 
@@ -136,25 +145,37 @@ nav a:hover {
 .contact-section {
     position: relative;
     width: 100%;
-    height: 80vh; /* hauteur de la section, ajustable */
-    background: url('images/AK_contact.jpeg') center/cover no-repeat;
+    height: 50vh; /* hauteur plus étroite pour un panorama */
+    background: url('images/AK_contact.jpeg') top center / cover no-repeat;
     overflow: hidden;
+    display: flex;
+    align-items: stretch;
 }
 
-/* Conteneur pour positionner les textes */
+/* Overlay optionnel pour lisibilité du texte */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3); /* léger voile sombre */
+    z-index: 1;
+}
+
+/* Conteneur pour le texte */
 .contact-container {
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 2; /* texte au-dessus de l'overlay */
 }
 
 /* Texte en haut à gauche */
 .contact-top {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     font-size: 20px;
-    font-weight: 400;
     color: #fff;
     margin: 0;
 }
@@ -162,7 +183,7 @@ nav a:hover {
 /* Texte en bas centré */
 .contact-bottom {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 18px;
@@ -170,19 +191,24 @@ nav a:hover {
     margin: 0;
 }
 
-/* Responsive pour mobile */
+/* Responsive mobile */
 @media (max-width: 768px) {
+    .contact-section {
+        height: 40vh; /* un peu plus petit sur mobile */
+    }
+
     .contact-top {
         font-size: 16px;
-        top: 15px;
-        left: 15px;
+        top: 8px;
+        left: 8px;
     }
 
     .contact-bottom {
         font-size: 14px;
-        bottom: 15px;
+        bottom: 8px;
     }
 }
+
 
 .section {
     padding: 120px 20px;
