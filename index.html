@@ -76,7 +76,7 @@ nav a:hover {
     
 .hero {
     height: 100vh;
-    background: url('images/AK_11.jpeg') center/cover no-repeat;
+    background: url('images/AK_11.jpeg' oncontextmenu="return false;" draggable="false") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +95,7 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .hero {
-        background-image: url('images/AK_hero_mobile.jpeg'); /* si tu veux une image différente */
+        background-image: url('images/AK_hero_mobile.jpeg' oncontextmenu="return false;" draggable="false"); /* si tu veux une image différente */
         background-position: top left; /* focus sur le coin haut-gauche */
         background-size: cover;
         background-repeat: no-repeat;
@@ -347,7 +347,7 @@ footer {
   </div>
 
   <div class="contact-image">
-    <img src="images/AK_contact.jpeg" oncontextmenu="return false;" alt="">
+    <img src="images/AK_contact.jpeg" oncontextmenu="return false;" draggable="false" alt="">
   </div>
 </section>
 
